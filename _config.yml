@@ -20,7 +20,7 @@
 
 title: Yian Wong
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "http://1yian.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: 1yian
 github_username:  1yian
 
