@@ -15,11 +15,14 @@ International Symposium for Geotechnical Safety & Risk 2022 \
 
 ### Personal Projects
 
-<span class='paper-title'>[MuZero for Connect Four](https://www.github.com/1yian/ConnectFourRL)</span>\
-I implemented the [MuZero reinforcement learning algorithm](https://www.deepmind.com/blog/muzero-mastering-go-chess-shogi-and-atari-without-rules) for the game of ConnectFour. The algorithm was able to learn the rules of the game and improve its performance over time. My implementation allows players to compete against the AI and see how it performs in different scenarios.
+<span class='paper-title'>ConnectFourRL [[code]](https://www.github.com/1yian/ConnectFourRL)</span>\
+I implemented the off-policy actor critic for the game of ConnectFour. I later combined the model with Monte-Carlo Tree Search to allow it to make better decisions by looking ahead. The algorithm was able improve its performance over time by playing against itself. My implementation allows players to compete against the AI and see how it performs in different scenarios.
 
-<span class='paper-title'>[LoL Draft Predictor](https://www.github.com/1yian/ConnectFourRL)</span>\
-A model that predicts the likelihood of a team winning a game of [League of Legends](https://en.wikipedia.org/wiki/League_of_Legends) based on the team's draft picks. In addition to predicting the outcome of a match, the model can also suggest the best champion picks for a team to maximize its chances of victory. This can be a valuable tool for players looking to improve their draft strategy and increase their chances of winning in-game.
+<span class='paper-title'>Reinforcement Learning in SuperTuxKart [[paper]](/files/supertuxkart.pdf)</span>\
+We implement asynchronous actor critic for SuperTuxKart. We discuss the sample inefficiency for SuperTuxKart, and later suggest an imitation learning framework based on [DAgger](https://www.ri.cmu.edu/pub_files/2011/4/Ross-AISTATS11-NoRegret.pdf). We show that we can accurately mimic expert behavior and suggest methods to extrapolate to performance beyond the expert agent.
 
-<span class='paper-title'>[TwitchMoji](https://www.github.com/1yian/ConnectFourRL)</span>\
+<span class='paper-title'>MuZero in MuJoCo [[paper]](/files/muzero_mujoco.pdf)</span>\
+We implement asynchronous actor critic for SuperTuxKart. We discuss the sample inefficiency for SuperTuxKart, and later suggest an imitation learning framework based on [DAgger](https://www.ri.cmu.edu/pub_files/2011/4/Ross-AISTATS11-NoRegret.pdf). We show that we can accurately mimic expert behavior and suggest methods to extrapolate to performance beyond the expert agent.
+
+<span class='paper-title'>TwitchMoji [[paper]](/files/twitchmoji.pdf)</span> 
 TwitchMoji is a personal project that uses machine learning to predict the emojis used in [Twitch](https://en.wikipedia.org/wiki/Twitch_(service)) chat messages. By fine-tuning a language model, we can accurately detect the sentiment of any given text and provide a unique way of expressing it in the form of Twitch emojis. This makes TwitchMoji a valuable tool for understanding the sentiment of Twitch chat messages.
