@@ -24,7 +24,7 @@ Our team implemented [MuZero](https://arxiv.org/pdf/1911.08265.pdf) and applied 
 
 <span class='paper-title'>Probabilistic Circuits for Causal Discovery and Model-Based Reinforcement Learning [[paper]](https://drive.google.com/file/d/1RkGMRXwetctpJfo3M2O5pH3Z-8NgD1R8/view?usp=sharing) [[slides]](https://drive.google.com/file/d/1LwvJZ23Lpd6vu9Jq_n9qfhuWVbKCUG0R/view?usp=drive_link) [[talk]](https://drive.google.com/file/d/1pY49JydLrhUZ8MJRJvMlAC35xmzfKuoq/view?usp=sharing)</span>\
 *Reinforcement Learning, Causality, Probabilistic Modeling*\
-For my class in Causal Reinforcement Learning, I explored a probabilistic circuit, also known as Sum Product Networks (SPNs), and their ability to generalize while succinctly exposing internalized causal relationships that were discovered in deep reinforcement learning. I showed that SPNs are comparable to neural networks in reinforcement learning settings, while providing us greatly improved interprability from a causal perspective.
+For my class in Causal Reinforcement Learning, I explored Sum Product Networks (SPNs), and their ability to generalize while succinctly exposing internalized causal relationships that were discovered in deep reinforcement learning. I showed that SPNs are comparable to neural networks in reinforcement learning settings, while providing us greatly improved interprability from a causal perspective.
 
 <span class='paper-title'>TwitchMoji [[paper]](https://drive.google.com/file/d/149CHwFuEuTAdsaIBYTaiO_cgisINN7A5/view?usp=drive_link)</span>\
 *Natural Language Processing*\
