@@ -20,11 +20,11 @@ International Symposium for Geotechnical Safety & Risk 2022 \
 
 <span class='paper-title'>TwitchMoji [[paper]](https://drive.google.com/file/d/149CHwFuEuTAdsaIBYTaiO_cgisINN7A5/view?usp=drive_link)</span>\
 *Natural Language Processing*\
-TwitchMoji is a machine learning tool that predicts the emojis to be used in Twitch chat messages. By fine-tuning a language model, we can accurately detect the sentiment of any text and express it through Twitch emojis. This allows our model to provide insight into the sentiment of Twitch chat messages and serve as a useful tool for understanding them.
+We fine-tuning the BART language model to accurately detect the sentiment. We do this by training it to predict what Twitch emojis were used in Twitch chat messages. By training on billions of chat instances, our fine-tuned BART model is able to better adapt to other sentiment analysis tasks.
 
 <span class='paper-title'>Adversarial Training for Improving Compositional Understanding of Vision-Language Models [[paper]](https://drive.google.com/file/d/1EOF4fVKuT7G_Rm7q0_jxOhUbZ-2dfKOq/view?usp=drive_link)</span>\
 *Natural Language Processing*\
-TwitchMoji is a machine learning tool that predicts the emojis to be used in Twitch chat messages. By fine-tuning a language model, we can accurately detect the sentiment of any text and express it through Twitch emojis. This allows our model to provide insight into the sentiment of Twitch chat messages and serve as a useful tool for understanding them.
+In this project, we tackle the problem of grounding natural language. One important benchmark in this field is the [Winoground Challenge](https://arxiv.org/abs/2204.03162), which tasks vision-language models to correctly match similar sentence-image pairs. We propose an adversarial learning adjustments to help improve compositional understanding of the [CLIP model](https://arxiv.org/abs/2103.00020).
 
 <span class='paper-title'>ConnectFourRL [[code]](https://www.github.com/1yian/ConnectFourRL)</span>\
 *Computer Vision, Reinforcement Learning*\
