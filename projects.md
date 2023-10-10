@@ -28,7 +28,7 @@ For my class in Causal Reinforcement Learning, I explored Sum Product Networks (
 
 <span class='paper-title'>TwitchMoji [[paper]](https://drive.google.com/file/d/149CHwFuEuTAdsaIBYTaiO_cgisINN7A5/view?usp=drive_link)</span>\
 *Natural Language Processing*\
-We fine-tuning the BART language model to accurately detect the sentiment. We do this by training it to predict what Twitch emojis were used in Twitch chat messages. By training on billions of chat instances, our fine-tuned BART model is able to better adapt to other sentiment analysis tasks.
+We fine-tune the BART language model to accurately detect the sentiment. We do this by training it to predict what Twitch emojis were used in Twitch chat messages. By training on billions of chat instances, our fine-tuned BART model is able to better adapt to other sentiment analysis tasks.
 
 <span class='paper-title'>Adversarial Training for Improving Compositional Understanding of Vision-Language Models [[paper]](https://drive.google.com/file/d/1EOF4fVKuT7G_Rm7q0_jxOhUbZ-2dfKOq/view?usp=drive_link)</span>\
 *Natural Language Processing, Computer Vision*\
