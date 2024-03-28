@@ -2,7 +2,7 @@
 layout: default
 ---
 
-### Publications
+### Papers
 
 <span class='paper-title'>[Stable Remaster: Bridging the Gap Between Old Content and New Displays](https://arxiv.org/abs/2306.06803)</span>\
 arXiv preprint 2023 \
@@ -16,7 +16,11 @@ American Rock Mechanics Association Symposium 2022 \
 International Symposium for Geotechnical Safety & Risk 2022 \
 **Yian Wong**, Sau-Wai Wong
 
-### Personal Projects
+### Projects
+
+<span class='paper-title'>Integrated System for Exploring Multiple Perspectives to Mitigate Cognitive Biases [[demo]](https://debate-prototype.streamlit.app/)</span>\
+*Generative AI*\
+Part of my Master's thesis, in a research project sponsored by Microsoft Research. This project enables users to make better decisions about difficult topics. Given a difficult topic, we create various personas, and ask LLMs to roleplay as these personas, each contributing a different perspective about the topic in a debate-style format. The goal is to mitigate user biases.
 
 <span class='paper-title'>Interpretable Robot Locomotion by Monte Carlo Tree Search and Self-Supervised Learning [[paper]](https://drive.google.com/file/d/1fRZ0oGF6ifNb6KfvyZyG4Yu4IbJo3kL2/view?usp=drive_link)</span>\
 *Computer Vision, Reinforcement Learning*\
