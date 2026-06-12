@@ -20,7 +20,7 @@
 
 title: Yian Wong
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://1yian.com" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://1yian.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: 1yian
 github_username:  1yian
 
@@ -35,7 +35,7 @@ nav:
   - name: "projects"
     link: "/projects"
   - name: "resume"
-    link: "https://drive.google.com/file/d/1K9QoxzdmL1ibX-UshI5-YXFQoGOImm_D/view?usp=sharing"
+    link: "https://drive.google.com/file/d/1Ju8MXe0DlC-R49GDbQyV31v7BrPmV4OT/view?usp=sharing"
 
 # Exclude from processing.
 # The following items will not be processed, by default.

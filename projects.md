@@ -2,6 +2,12 @@
 layout: default
 ---
 
+### Products
+
+<span class='paper-title'>Cleo — AI Voice Agents for Car Dealerships [[callcleo.ai]](https://callcleo.ai)</span>\
+*Generative AI, Voice Agents*\
+I founded Cleo, an LLM-powered voice agent platform that answers dealership phone calls, books appointments, and integrates directly with CRM, calendar, and inventory systems. Cleo serves 15 dealerships and handles 100+ appointment requests weekly per store, with 82% call containment and sub-6-second first response.
+
 ### Papers
 
 <span class='paper-title'>[Stable Remaster: Bridging the Gap Between Old Content and New Displays](https://arxiv.org/abs/2306.06803)</span>\
