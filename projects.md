@@ -2,12 +2,6 @@
 layout: default
 ---
 
-### Products
-
-<span class='paper-title'>Cleo — AI Voice Agents for Car Dealerships [[callcleo.ai]](https://callcleo.ai)</span>\
-*Generative AI, Voice Agents*\
-I founded Cleo, an LLM-powered voice agent platform that answers dealership phone calls, books appointments, and integrates directly with CRM, calendar, and inventory systems. Cleo serves 15 dealerships and handles 100+ appointment requests weekly per store, with 82% call containment and sub-6-second first response.
-
 ### Papers
 
 <span class='paper-title'>[Stable Remaster: Bridging the Gap Between Old Content and New Displays](https://arxiv.org/abs/2306.06803)</span>\
@@ -23,6 +17,10 @@ International Symposium for Geotechnical Safety & Risk 2022 \
 **Yian Wong**, Sau-Wai Wong
 
 ### Projects
+
+<span class='paper-title'>Cleo — LLM Voice Agents for Car Dealerships [[callcleo.ai]](https://callcleo.ai)</span>\
+*Generative AI, Voice Agents*\
+An LLM-powered voice agent that answers dealership phone calls, books appointments, and integrates directly with CRM, calendar, and inventory systems. Built end to end — real-time speech, function calling, and continuous evaluation pipelines — achieving 82% call containment and sub-6-second first response in production.
 
 <span class='paper-title'>Integrated System for Exploring Multiple Perspectives to Mitigate Cognitive Biases [[demo]](https://debate-prototype.streamlit.app/)</span>\
 *Generative AI*\
