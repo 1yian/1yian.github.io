@@ -59,13 +59,60 @@
     var o = e.target.closest("[data-open]");
     if (o) {
       var k = o.dataset.open;
-      if (k === "wechat") openDlg(wxDlg);
+      if (k === "wechat") openWechat("", false);
       else openLead(k, o.dataset.car || cfg.car || "", o.dataset.title);
     }
     var c = e.target.closest("[data-copy]");
-    if (c && navigator.clipboard) navigator.clipboard.writeText(c.dataset.copy);
+    if (c) copyText(c.dataset.copy, c).then(function (ok) { if (ok) flashCopied(c); });
     if (e.target.tagName === "DIALOG") e.target.close();
   });
+
+  // ---- WeChat: show how to add the store, with the shopper's message when there is one ----
+  function openWechat(note, copied) {
+    wxDlg.dataset.mode = note ? "note" : "plain";
+    $("[data-wx-ok]", wxDlg).hidden = !copied;
+    $("[data-wx-note-text]", wxDlg).textContent = note;
+    var noteBtn = $(".wx-note [data-copy]", wxDlg);
+    noteBtn.dataset.copy = note;
+    $$("[data-copy]", wxDlg).forEach(function (b) { b.classList.remove("done"); });
+    if (copied) noteBtn.classList.add("done");
+    openDlg(wxDlg);
+  }
+
+  // ---- clipboard (the async API needs https; the textarea fallback covers plain http previews) ----
+  function copyText(text, from) {
+    if (navigator.clipboard && window.isSecureContext) {
+      return navigator.clipboard.writeText(text).then(function () { return true; }, function () { return legacyCopy(text, from); });
+    }
+    return Promise.resolve(legacyCopy(text, from));
+  }
+  function legacyCopy(text, from) {
+    // Inside an open modal dialog the rest of the page is inert, so the textarea goes in the dialog.
+    var host = (from && from.closest("dialog")) || document.body;
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.cssText = "position:fixed;top:0;left:0;opacity:0;font-size:16px";
+    host.appendChild(ta);
+    ta.select();
+    ta.setSelectionRange(0, text.length);
+    var ok = false;
+    try { ok = document.execCommand("copy"); } catch (e) {}
+    host.removeChild(ta);
+    return ok;
+  }
+  function flashCopied(b) {
+    // The clipboard holds one thing, so only the latest copy shows as copied.
+    var dlg = b.closest("dialog");
+    if (dlg) {
+      $$("[data-copy]", dlg).forEach(function (x) { x.classList.remove("done"); });
+      var ok = $("[data-wx-ok]", dlg);
+      if (ok) ok.hidden = true;
+    }
+    b.classList.add("done");
+    clearTimeout(b._t);
+    b._t = setTimeout(function () { b.classList.remove("done"); }, 2000);
+  }
 
   // ---- filters ----
   var chips = $$("[data-filter]");
@@ -89,6 +136,24 @@
     var s = $(".status", form);
     if (s) { s.hidden = true; s.removeAttribute("data-state"); }
   }
+  function leadPayload(fields, button) {
+    return {
+      form_type: fields.form_type,
+      fields: fields,
+      car: fields.car || null,
+      car_label: fields.car && cfg.cars ? cfg.cars[fields.car] || null : null,
+      source: {
+        utm: source.utm || {},
+        referrer: source.referrer || "",
+        landing_page: source.landing_page || "",
+        first_seen: source.first_seen || "",
+        page: location.pathname + location.search,
+        button: button,
+        language: doc.dataset.lang,
+        submitted_at: new Date().toISOString()
+      }
+    };
+  }
   function setStatus(form, state) {
     var s = $(".status", form);
     if (!s) return;
@@ -104,22 +169,8 @@
       Array.prototype.forEach.call(form.elements, function (el) {
         if (el.name && el.name !== "company" && el.value !== "" && el.type !== "submit") fields[el.name] = el.value;
       });
-      var payload = {
-        form_type: fields.form_type || form.dataset.form,
-        fields: fields,
-        car: fields.car || null,
-        car_label: fields.car && cfg.cars ? cfg.cars[fields.car] || null : null,
-        source: {
-          utm: source.utm || {},
-          referrer: source.referrer || "",
-          landing_page: source.landing_page || "",
-          first_seen: source.first_seen || "",
-          page: location.pathname + location.search,
-          button: form.closest("dialog") ? (lastButton || "dialog") : "form:" + (fields.form_type || form.dataset.form),
-          language: doc.dataset.lang,
-          submitted_at: new Date().toISOString()
-        }
-      };
+      fields.form_type = fields.form_type || form.dataset.form;
+      var payload = leadPayload(fields, form.closest("dialog") ? (lastButton || "dialog") : "form:" + fields.form_type);
       if (!cfg.endpoint) { setStatus(form, "preview"); return; } // preview mode: send nothing
       var btn = $("button[type=submit]", form);
       btn.disabled = true;
@@ -130,4 +181,44 @@
     });
     form.addEventListener("input", function () { resetStatus(form); });
   });
+
+  // ---- find my car: one tap to WeChat, text or call, with budget and type in the message ----
+  var reach = $("[data-reach-form]");
+  if (reach) {
+    var said = function (sel) {
+      var o = sel.options[sel.selectedIndex];
+      return o && o.value ? o.dataset[doc.dataset.lang === "en" ? "sayEn" : "sayZh"] : "";
+    };
+    var reachMessage = function () {
+      var parts = [said(reach.elements.budget), said(reach.elements.body_type)].filter(Boolean);
+      if (doc.dataset.lang === "en") {
+        if (!parts.length) return "Hi, I'm looking to buy a used car. What do you have in stock right now?";
+        var s = parts.join(", and ");
+        return "Hi, I'm looking to buy a used car. " + s.charAt(0).toUpperCase() + s.slice(1) + ". Do you have anything that fits?";
+      }
+      if (!parts.length) return "您好，我想买辆二手车，请问现在有哪些车在售？";
+      return "您好，我想买辆二手车，" + parts.join("，") + "。有合适的车吗？";
+    };
+    var sms = $("[data-reach=sms]", reach);
+    var smsTo = sms.getAttribute("href");
+    // "?&body=" is the form both iOS Messages and Android messaging apps read.
+    var updateReach = function () { sms.setAttribute("href", smsTo + "?&body=" + encodeURIComponent(reachMessage())); };
+    reach.addEventListener("change", updateReach);
+    $$("[data-lang-toggle]").forEach(function (b) { b.addEventListener("click", updateReach); });
+    updateReach();
+    reach.addEventListener("submit", function (e) { e.preventDefault(); });
+    reach.addEventListener("click", function (e) {
+      var a = e.target.closest("[data-reach]");
+      if (!a) return;
+      var msg = reachMessage();
+      if (a.dataset.reach === "wechat") copyText(msg).then(function (ok) { openWechat(msg, ok); });
+      // With a lead endpoint set, each tap is also logged with its source; without one nothing is sent.
+      if (cfg.endpoint && navigator.sendBeacon) {
+        var fields = { form_type: "find_car", action: a.dataset.reach, message: msg };
+        if (reach.elements.budget.value) fields.budget = reach.elements.budget.value;
+        if (reach.elements.body_type.value) fields.body_type = reach.elements.body_type.value;
+        navigator.sendBeacon(cfg.endpoint, JSON.stringify(leadPayload(fields, a.dataset.button)));
+      }
+    });
+  }
 })();
