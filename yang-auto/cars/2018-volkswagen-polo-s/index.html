@@ -140,15 +140,14 @@
     <h2 id="dlg-title"><span data-dlg-title="ask"><span class="zh" lang="zh-Hans">咨询详情</span><span class="en" lang="en">Ask about this car</span></span><span data-dlg-title="test_drive"><span class="zh" lang="zh-Hans">预约试驾</span><span class="en" lang="en">Book a test drive</span></span><span data-dlg-title="visit"><span class="zh" lang="zh-Hans">预约到店</span><span class="en" lang="en">Book a visit</span></span></h2>
     <p class="dlg-car" data-dlg-car></p>
     <input type="hidden" name="car"><input type="hidden" name="form_type" value="ask">
-    <label class="fld"><small><span class="zh" lang="zh-Hans">称呼</span><span class="en" lang="en">Name</span></small><input name="name" required autocomplete="name" data-ph-zh="请输入您的称呼" data-ph-en="Your name" placeholder="请输入您的称呼"></label>
-    <label class="fld"><small><span class="zh" lang="zh-Hans">联系方式</span><span class="en" lang="en">WeChat or phone</span></small><input name="contact" required autocomplete="tel" data-ph-zh="请输入微信号或手机号码" data-ph-en="WeChat ID or phone number" placeholder="请输入微信号或手机号码"></label>
+    <label class="fld"><small><span class="zh" lang="zh-Hans">手机号码</span><span class="en" lang="en">Phone number</span></small><input type="tel" name="contact" required autocomplete="tel" data-ph-zh="请输入手机号码" data-ph-en="Your phone number" placeholder="请输入手机号码"></label>
     <label class="fld" data-only="test_drive"><small><span class="zh" lang="zh-Hans">预约时间</span><span class="en" lang="en">When suits you</span></small><input name="preferred_time" data-ph-zh="例如 周六下午" data-ph-en="Saturday afternoon" placeholder="例如 周六下午"></label>
     <label class="fld" data-only="ask"><small><span class="zh" lang="zh-Hans">咨询内容</span><span class="en" lang="en">Your question</span></small><input name="message" data-ph-zh="例如 价格、车况、付款方式" data-ph-en="Price, condition, financing" placeholder="例如 价格、车况、付款方式"></label>
     <input class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
     <button class="btn red big" type="submit"><span class="zh" lang="zh-Hans">提交</span><span class="en" lang="en">Send</span></button>
     <div class="status" role="status" aria-live="polite" hidden>
     <div class="s-preview"><span class="zh" lang="zh-Hans">当前为预览版本，表单尚未接通，信息未发送。请直接致电联系我们。</span><span class="en" lang="en">This is a preview. The form is not connected yet, so nothing was sent. Please give us a call.</span></div>
-    <div class="s-ok"><span class="zh" lang="zh-Hans">提交成功，我们将尽快通过微信或电话与您联系。</span><span class="en" lang="en">Thanks, we got it. We will reach you by WeChat or phone soon.</span></div>
+    <div class="s-ok"><span class="zh" lang="zh-Hans">提交成功，我们会尽快通过电话或短信与您联系。</span><span class="en" lang="en">Thanks, we got it. We will call or text you soon.</span></div>
     <div class="s-err"><span class="zh" lang="zh-Hans">提交失败，请稍后重试或直接致电。</span><span class="en" lang="en">That did not go through. Please try again, or call us.</span></div>
   </div>
   </form>
@@ -163,6 +162,6 @@
   <a class="btn red big" href="weixin://" data-button="wechat-open"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 9.5C14.5 6.4 11.6 4 8 4 4.1 4 1 6.7 1 10c0 1.8.9 3.4 2.4 4.5L3 17l2.8-1.4c.7.2 1.4.3 2.2.4"/><path d="M16 10c3.3 0 6 2.2 6 5 0 1.5-.8 2.8-2 3.7l.4 2.3-2.5-1.3c-.6.2-1.2.3-1.9.3-3.3 0-6-2.2-6-5s2.7-5 6-5z"/></svg><span class="zh" lang="zh-Hans">打开微信</span><span class="en" lang="en">Open WeChat</span></a>
 </dialog>
 <script>window.YANG={"endpoint":"","cars":{"2020-toyota-rav4-xle":"2020 Toyota RAV4 XLE","2019-toyota-camry-se":"2019 Toyota Camry SE","2019-ford-expedition-xlt":"2019 Ford Expedition XLT","2019-hyundai-accent-se":"2019 Hyundai Accent SE","2018-volkswagen-polo-s":"2018 Volkswagen Polo S","2018-nissan-juke-sv":"2018 Nissan Juke SV","2017-audi-a4-premium":"2017 Audi A4 Premium","2016-mercedes-gle350":"2016 Mercedes-Benz GLE 350 4MATIC"},"car":"2018-volkswagen-polo-s"}</script>
-<script src="../../app.js" defer></script>
+<script src="../../app.js?v=ad905419" defer></script>
 </body>
 </html>
