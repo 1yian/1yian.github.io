@@ -193,7 +193,7 @@
   <div class="wrap fin-g">
     <div class="fin-t">
       <h2><span class="zh" lang="zh-Hans">全款、贷款<em>均可</em></span><span class="en" lang="en">Pay cash <em>or finance</em></span></h2>
-      <p><span class="zh" lang="zh-Hans">全款购车按标价洽谈。如需贷款，请留下联系方式，我们将为您了解首付及月供方案。</span><span class="en" lang="en">Paying cash? Start from the posted price. Want to finance? Leave your details and we will find out what is possible and roughly what the down payment and monthly cost would be.</span></p>
+      <p><span class="zh" lang="zh-Hans">全款购车按标价洽谈。如需贷款，请留下手机号码，我们将协助您了解首付及月供方案。</span><span class="en" lang="en">Paying cash? Start from the posted price. Want to finance? Leave your phone number and we will find out what is possible and roughly what the down payment and monthly cost would be.</span></p>
       <ul class="ticks"><li><span class="zh" lang="zh-Hans">价格、手续及合同条款，全程中文说明</span><span class="en" lang="en">Price, paperwork and contract explained in Mandarin</span></li><li><span class="zh" lang="zh-Hans">贷款方案以贷款机构审批结果为准</span><span class="en" lang="en">Any loan depends on the lender’s approval</span></li></ul>
     </div>
     <form class="card-form lead" data-form="prequal" novalidate>
@@ -207,13 +207,12 @@
         <label class="fld"><small><span class="zh" lang="zh-Hans">信用分</span><span class="en" lang="en">Credit score</span></small><select name="credit"><option value="" data-zh="暂不清楚" data-en="Not sure">暂不清楚</option><option value="good" data-zh="700 以上" data-en="700 or higher">700 以上</option><option value="fair" data-zh="600 至 700" data-en="600 to 700">600 至 700</option><option value="building" data-zh="600 以下或暂无信用记录" data-en="Under 600 or no credit">600 以下或暂无信用记录</option></select></label>
         <label class="fld"><small><span class="zh" lang="zh-Hans">月收入</span><span class="en" lang="en">Monthly income</span></small><select name="income"><option value="" data-zh="暂不提供" data-en="Rather not say">暂不提供</option><option value="under-3k" data-zh="3,000 美元以下" data-en="Under $3,000">3,000 美元以下</option><option value="3-5k" data-zh="3,000 至 5,000 美元" data-en="$3,000 to $5,000">3,000 至 5,000 美元</option><option value="5k-plus" data-zh="5,000 美元以上" data-en="Over $5,000">5,000 美元以上</option></select></label>
       </div>
-      <label class="fld"><small><span class="zh" lang="zh-Hans">称呼</span><span class="en" lang="en">Name</span></small><input name="name" required autocomplete="name" data-ph-zh="请输入您的称呼" data-ph-en="Your name" placeholder="请输入您的称呼"></label>
-      <label class="fld"><small><span class="zh" lang="zh-Hans">联系方式</span><span class="en" lang="en">WeChat or phone</span></small><input name="contact" required autocomplete="tel" data-ph-zh="请输入微信号或手机号码" data-ph-en="WeChat ID or phone number" placeholder="请输入微信号或手机号码"></label>
+      <label class="fld"><small><span class="zh" lang="zh-Hans">手机号码</span><span class="en" lang="en">Phone number</span></small><input type="tel" name="contact" required autocomplete="tel" data-ph-zh="请输入手机号码" data-ph-en="Your phone number" placeholder="请输入手机号码"></label>
       <input class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
       <button class="btn red big" type="submit"><span class="zh" lang="zh-Hans">提交咨询</span><span class="en" lang="en">Send</span></button>
       <div class="status" role="status" aria-live="polite" hidden>
     <div class="s-preview"><span class="zh" lang="zh-Hans">当前为预览版本，表单尚未接通，信息未发送。请直接致电联系我们。</span><span class="en" lang="en">This is a preview. The form is not connected yet, so nothing was sent. Please give us a call.</span></div>
-    <div class="s-ok"><span class="zh" lang="zh-Hans">提交成功，我们将尽快通过微信或电话与您联系。</span><span class="en" lang="en">Thanks, we got it. We will reach you by WeChat or phone soon.</span></div>
+    <div class="s-ok"><span class="zh" lang="zh-Hans">提交成功，我们会尽快通过电话或短信与您联系。</span><span class="en" lang="en">Thanks, we got it. We will call or text you soon.</span></div>
     <div class="s-err"><span class="zh" lang="zh-Hans">提交失败，请稍后重试或直接致电。</span><span class="en" lang="en">That did not go through. Please try again, or call us.</span></div>
   </div>
     </form>
@@ -247,13 +246,13 @@
         <label class="fld"><small><span class="zh" lang="zh-Hans">年份及车型</span><span class="en" lang="en">Year, make and model</span></small><input name="vehicle" required data-ph-zh="例如 2017 款凯美瑞" data-ph-en="2017 Honda Accord" placeholder="例如 2017 款凯美瑞"></label>
         <label class="fld"><small><span class="zh" lang="zh-Hans">里程（英里）</span><span class="en" lang="en">Mileage</span></small><input name="mileage" inputmode="numeric" data-ph-zh="例如 6万" data-ph-en="60,000" placeholder="例如 6万"></label>
       </div>
-      <div class="row"><label class="fld"><small><span class="zh" lang="zh-Hans">称呼</span><span class="en" lang="en">Name</span></small><input name="name" required autocomplete="name" data-ph-zh="请输入您的称呼" data-ph-en="Your name" placeholder="请输入您的称呼"></label><label class="fld"><small><span class="zh" lang="zh-Hans">联系方式</span><span class="en" lang="en">WeChat or phone</span></small><input name="contact" required autocomplete="tel" data-ph-zh="请输入微信号或手机号码" data-ph-en="WeChat ID or phone number" placeholder="请输入微信号或手机号码"></label></div>
+      <label class="fld"><small><span class="zh" lang="zh-Hans">手机号码</span><span class="en" lang="en">Phone number</span></small><input type="tel" name="contact" required autocomplete="tel" data-ph-zh="请输入手机号码" data-ph-en="Your phone number" placeholder="请输入手机号码"></label>
       <input class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
       <button class="btn dark" type="submit"><span class="zh" lang="zh-Hans">免费估价</span><span class="en" lang="en">Get my offer</span></button>
       <p class="muted"><span class="zh" lang="zh-Hans">车辆照片可稍后通过微信发送</span><span class="en" lang="en">You can send photos later by WeChat</span></p>
       <div class="status" role="status" aria-live="polite" hidden>
     <div class="s-preview"><span class="zh" lang="zh-Hans">当前为预览版本，表单尚未接通，信息未发送。请直接致电联系我们。</span><span class="en" lang="en">This is a preview. The form is not connected yet, so nothing was sent. Please give us a call.</span></div>
-    <div class="s-ok"><span class="zh" lang="zh-Hans">提交成功，我们将尽快通过微信或电话与您联系。</span><span class="en" lang="en">Thanks, we got it. We will reach you by WeChat or phone soon.</span></div>
+    <div class="s-ok"><span class="zh" lang="zh-Hans">提交成功，我们会尽快通过电话或短信与您联系。</span><span class="en" lang="en">Thanks, we got it. We will call or text you soon.</span></div>
     <div class="s-err"><span class="zh" lang="zh-Hans">提交失败，请稍后重试或直接致电。</span><span class="en" lang="en">That did not go through. Please try again, or call us.</span></div>
   </div>
     </form>
@@ -285,15 +284,14 @@
     <h2 id="dlg-title"><span data-dlg-title="ask"><span class="zh" lang="zh-Hans">咨询详情</span><span class="en" lang="en">Ask about this car</span></span><span data-dlg-title="test_drive"><span class="zh" lang="zh-Hans">预约试驾</span><span class="en" lang="en">Book a test drive</span></span><span data-dlg-title="visit"><span class="zh" lang="zh-Hans">预约到店</span><span class="en" lang="en">Book a visit</span></span></h2>
     <p class="dlg-car" data-dlg-car></p>
     <input type="hidden" name="car"><input type="hidden" name="form_type" value="ask">
-    <label class="fld"><small><span class="zh" lang="zh-Hans">称呼</span><span class="en" lang="en">Name</span></small><input name="name" required autocomplete="name" data-ph-zh="请输入您的称呼" data-ph-en="Your name" placeholder="请输入您的称呼"></label>
-    <label class="fld"><small><span class="zh" lang="zh-Hans">联系方式</span><span class="en" lang="en">WeChat or phone</span></small><input name="contact" required autocomplete="tel" data-ph-zh="请输入微信号或手机号码" data-ph-en="WeChat ID or phone number" placeholder="请输入微信号或手机号码"></label>
+    <label class="fld"><small><span class="zh" lang="zh-Hans">手机号码</span><span class="en" lang="en">Phone number</span></small><input type="tel" name="contact" required autocomplete="tel" data-ph-zh="请输入手机号码" data-ph-en="Your phone number" placeholder="请输入手机号码"></label>
     <label class="fld" data-only="test_drive"><small><span class="zh" lang="zh-Hans">预约时间</span><span class="en" lang="en">When suits you</span></small><input name="preferred_time" data-ph-zh="例如 周六下午" data-ph-en="Saturday afternoon" placeholder="例如 周六下午"></label>
     <label class="fld" data-only="ask"><small><span class="zh" lang="zh-Hans">咨询内容</span><span class="en" lang="en">Your question</span></small><input name="message" data-ph-zh="例如 价格、车况、付款方式" data-ph-en="Price, condition, financing" placeholder="例如 价格、车况、付款方式"></label>
     <input class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
     <button class="btn red big" type="submit"><span class="zh" lang="zh-Hans">提交</span><span class="en" lang="en">Send</span></button>
     <div class="status" role="status" aria-live="polite" hidden>
     <div class="s-preview"><span class="zh" lang="zh-Hans">当前为预览版本，表单尚未接通，信息未发送。请直接致电联系我们。</span><span class="en" lang="en">This is a preview. The form is not connected yet, so nothing was sent. Please give us a call.</span></div>
-    <div class="s-ok"><span class="zh" lang="zh-Hans">提交成功，我们将尽快通过微信或电话与您联系。</span><span class="en" lang="en">Thanks, we got it. We will reach you by WeChat or phone soon.</span></div>
+    <div class="s-ok"><span class="zh" lang="zh-Hans">提交成功，我们会尽快通过电话或短信与您联系。</span><span class="en" lang="en">Thanks, we got it. We will call or text you soon.</span></div>
     <div class="s-err"><span class="zh" lang="zh-Hans">提交失败，请稍后重试或直接致电。</span><span class="en" lang="en">That did not go through. Please try again, or call us.</span></div>
   </div>
   </form>
@@ -308,6 +306,6 @@
   <a class="btn red big" href="weixin://" data-button="wechat-open"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 9.5C14.5 6.4 11.6 4 8 4 4.1 4 1 6.7 1 10c0 1.8.9 3.4 2.4 4.5L3 17l2.8-1.4c.7.2 1.4.3 2.2.4"/><path d="M16 10c3.3 0 6 2.2 6 5 0 1.5-.8 2.8-2 3.7l.4 2.3-2.5-1.3c-.6.2-1.2.3-1.9.3-3.3 0-6-2.2-6-5s2.7-5 6-5z"/></svg><span class="zh" lang="zh-Hans">打开微信</span><span class="en" lang="en">Open WeChat</span></a>
 </dialog>
 <script>window.YANG={"endpoint":"","cars":{"2020-toyota-rav4-xle":"2020 Toyota RAV4 XLE","2019-toyota-camry-se":"2019 Toyota Camry SE","2019-ford-expedition-xlt":"2019 Ford Expedition XLT","2019-hyundai-accent-se":"2019 Hyundai Accent SE","2018-volkswagen-polo-s":"2018 Volkswagen Polo S","2018-nissan-juke-sv":"2018 Nissan Juke SV","2017-audi-a4-premium":"2017 Audi A4 Premium","2016-mercedes-gle350":"2016 Mercedes-Benz GLE 350 4MATIC"}}</script>
-<script src="app.js" defer></script>
+<script src="app.js?v=ad905419" defer></script>
 </body>
 </html>
